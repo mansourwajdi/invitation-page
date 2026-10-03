@@ -3,133 +3,360 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>You're Invited — Family Fun Day</title>
+  <title>Sarah &amp; James — Engagement Celebration</title>
+  <meta name="description" content="Join us to celebrate the engagement of Sarah Mitchell and James Carter.">
+  <meta property="og:title" content="Sarah &amp; James — Engagement Celebration">
+  <meta property="og:description" content="Saturday, June 12, 2027 · The Willow Estate">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #fff8e7;
-      --card: #ffffff;
-      --ink: #3a3340;
-      --muted: #7a7283;
-      --accent: #ff7a59;
-      --accent2: #4cb8c4;
-      --accent3: #ffc93c;
+      --ivory: #faf7f2;
+      --paper: #fffdf9;
+      --ink: #2c2a28;
+      --muted: #7b756d;
+      --gold: #a8873f;
+      --gold-soft: #d9c79a;
+      --sage: #5f6f61;
+      --line: #e8e0d2;
+      --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      --sans: "Jost", system-ui, -apple-system, "Segoe UI", sans-serif;
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
       min-height: 100vh;
       display: grid;
       place-items: center;
-      padding: 24px 16px;
+      padding: 48px 20px;
       background:
-        radial-gradient(circle at 10% 15%, #ffe9a8 0 60px, transparent 61px),
-        radial-gradient(circle at 92% 85%, #bfe9ee 0 80px, transparent 81px),
-        radial-gradient(circle at 88% 10%, #ffd0c2 0 45px, transparent 46px),
-        var(--bg);
-      color: var(--ink);
-      font-family: "Trebuchet MS", "Comic Sans MS", system-ui, sans-serif;
+        radial-gradient(ellipse at 50% 0%, #fff 0%, transparent 60%),
+        var(--ivory);
     }
-    .card {
+    .frame {
       width: 100%;
-      max-width: 540px;
-      background: var(--card);
-      border-radius: 32px;
-      padding: 40px 28px 36px;
-      text-align: center;
-      box-shadow: 0 16px 40px rgba(58, 51, 64, 0.14);
-      border: 5px dashed var(--accent3);
+      max-width: 640px;
+      padding: 18px;
+      border: 1px solid var(--gold-soft);
+      background: var(--paper);
+      box-shadow: 0 30px 60px -30px rgba(60, 45, 20, 0.25);
     }
-    .emoji-row { font-size: 2rem; letter-spacing: 0.4rem; margin-bottom: 8px; }
+    .frame-inner {
+      border: 1px solid var(--gold-soft);
+      padding: 56px 28px 48px;
+      text-align: center;
+    }
+    .monogram {
+      width: 84px; height: 84px;
+      margin: 0 auto 28px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: grid; place-items: center;
+      font-family: var(--serif);
+      font-size: 1.9rem;
+      letter-spacing: 0.04em;
+      color: var(--gold);
+    }
     .eyebrow {
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      font-size: 0.95rem;
-      color: var(--accent2);
-      margin: 0 0 8px;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 22px;
     }
     h1 {
-      font-size: 2.7rem;
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(2.8rem, 10vw, 4.6rem);
+      line-height: 1.05;
+      margin: 0;
+    }
+    h1 .amp {
+      display: block;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 0.5em;
+      color: var(--gold);
+      margin: 6px 0;
+    }
+    .tagline {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--muted);
+      margin: 28px 0 0;
+    }
+    .divider {
+      display: flex; align-items: center; justify-content: center; gap: 14px;
+      margin: 36px auto;
+      color: var(--gold);
+      max-width: 260px;
+    }
+    .divider::before, .divider::after {
+      content: ""; flex: 1; height: 1px; background: var(--gold-soft);
+    }
+    .divider span { font-size: 0.8rem; }
+    .date-big {
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      font-weight: 500;
+      margin: 0;
+    }
+    .date-sub { margin: 4px 0 0; color: var(--muted); letter-spacing: 0.12em; font-size: 0.85rem; text-transform: uppercase; }
+
+    /* ---------- Countdown ---------- */
+    .countdown {
+      display: flex; justify-content: center; gap: 10px;
+      margin-top: 36px;
+    }
+    .countdown div {
+      min-width: 66px;
+      padding: 12px 6px;
+      border: 1px solid var(--line);
+      background: var(--ivory);
+    }
+    .countdown strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 500;
       line-height: 1.1;
-      margin: 0 0 10px;
-      color: var(--accent);
+      color: var(--sage);
+      font-variant-numeric: tabular-nums;
     }
-    .host { color: var(--muted); margin: 0 0 28px; font-size: 1.05rem; }
-    .details {
-      display: grid;
-      gap: 12px;
-      margin: 0 0 28px;
-    }
-    .details div {
-      background: #fff4d6;
-      border-radius: 18px;
-      padding: 14px 16px;
-    }
-    .details div:nth-child(2) { background: #dff4f6; }
-    .details div:nth-child(3) { background: #ffe3da; }
-    .details dt {
-      font-size: 0.75rem;
-      font-weight: 700;
+    .countdown small {
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      letter-spacing: 0.15em;
       color: var(--muted);
     }
-    .details dd { margin: 4px 0 0; font-size: 1.15rem; font-weight: 600; }
-    .activities { margin: 0 0 28px; font-size: 1rem; line-height: 1.7; }
-    .activities span {
-      display: inline-block;
-      background: #f3eefb;
-      border-radius: 999px;
-      padding: 4px 14px;
-      margin: 3px;
-      font-size: 0.95rem;
+
+    /* ---------- Sections ---------- */
+    section.block {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 72px 20px;
+      text-align: center;
     }
+    section.block + section.block { border-top: 1px solid var(--line); }
+    h2 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 2.2rem;
+      margin: 0 0 8px;
+    }
+    .lede { color: var(--muted); max-width: 520px; margin: 0 auto 36px; }
+
+    .cards { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); text-align: center; }
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 28px 20px;
+    }
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .card p { margin: 0; font-family: var(--serif); font-size: 1.25rem; line-height: 1.4; }
+    .card small { display: block; margin-top: 6px; font-family: var(--sans); font-size: 0.85rem; color: var(--muted); }
+
+    .schedule { list-style: none; padding: 0; margin: 0 auto; max-width: 420px; text-align: left; }
+    .schedule li {
+      display: flex; gap: 20px; align-items: baseline;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .schedule time { flex: 0 0 84px; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-weight: 400; }
+    .schedule span { font-family: var(--serif); font-size: 1.25rem; }
+
+    /* ---------- Buttons ---------- */
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 8px; }
     .btn {
       display: inline-block;
-      background: var(--accent);
-      color: #fff;
+      padding: 14px 32px;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
       text-decoration: none;
-      padding: 15px 34px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 1.05rem;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      border: 1px solid var(--ink);
+      color: var(--ink);
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
     }
-    .btn:hover { transform: translateY(-2px) rotate(-1deg); box-shadow: 0 8px 18px rgba(255, 122, 89, 0.45); }
-    .note { margin-top: 20px; font-size: 0.95rem; color: var(--muted); }
+    .btn:hover, .btn:focus-visible { background: var(--ink); color: var(--paper); }
+    .btn.primary { background: var(--ink); color: var(--paper); }
+    .btn.primary:hover, .btn.primary:focus-visible { background: var(--gold); border-color: var(--gold); }
+    .btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+    .map-link { display: inline-block; margin-top: 18px; color: var(--sage); font-size: 0.9rem; }
+
+    footer {
+      text-align: center;
+      padding: 48px 20px 64px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--line);
+    }
+    footer .sig { font-family: var(--serif); font-style: italic; font-size: 1.5rem; color: var(--ink); margin-bottom: 6px; }
+
+    /* ---------- Motion ---------- */
+    @media (prefers-reduced-motion: no-preference) {
+      .fade { opacity: 0; transform: translateY(14px); animation: rise 0.9s ease forwards; }
+      .fade:nth-child(2) { animation-delay: 0.12s; }
+      .fade:nth-child(3) { animation-delay: 0.24s; }
+      .fade:nth-child(4) { animation-delay: 0.36s; }
+      .fade:nth-child(5) { animation-delay: 0.48s; }
+      .fade:nth-child(6) { animation-delay: 0.6s; }
+      .fade:nth-child(7) { animation-delay: 0.72s; }
+      @keyframes rise { to { opacity: 1; transform: none; } }
+    }
+    @media (max-width: 480px) {
+      .frame-inner { padding: 44px 18px 36px; }
+      .countdown { gap: 6px; }
+      .countdown div { min-width: 0; flex: 1; }
+    }
   </style>
 </head>
 <body>
-  <main class="card">
-    <div class="emoji-row" aria-hidden="true">🎈 🌳 🎈</div>
-    <p class="eyebrow">Family &amp; friends, you're invited to</p>
-    <h1>Family Fun Day</h1>
-    <p class="host">Hosted by Alex, Sam &amp; the kids</p>
 
-    <dl class="details">
-      <div>
-        <dt>Date</dt>
-        <dd>Saturday, July 18, 2026</dd>
-      </div>
-      <div>
-        <dt>Time</dt>
-        <dd>12:00 PM – 6:00 PM</dd>
-      </div>
-      <div>
-        <dt>Place</dt>
-        <dd>123 Maple Street, Springfield</dd>
-      </div>
-    </dl>
+  <header class="hero">
+    <div class="frame">
+      <div class="frame-inner">
+        <div class="monogram fade" aria-hidden="true">S&amp;J</div>
+        <p class="eyebrow fade">Together with their families</p>
+        <h1 class="fade">Sarah <span class="amp">&amp;</span> James</h1>
+        <p class="tagline fade">are engaged, and you are invited to celebrate</p>
 
-    <p class="activities">
-      <span>🍔 BBQ lunch</span>
-      <span>🎲 Lawn games</span>
-      <span>💦 Water balloons</span>
-      <span>🍦 Ice cream</span>
-      <span>🎂 Cake</span>
-    </p>
+        <div class="divider fade" aria-hidden="true"><span>◆</span></div>
 
-    <a class="btn" href="mailto:rsvp@example.com?subject=RSVP%20-%20Family%20Fun%20Day">RSVP by July 10</a>
-    <p class="note">Kids, grandparents &amp; pets all welcome. Let us know how many are coming!</p>
-  </main>
+        <p class="date-big fade">Saturday, June 12, 2027</p>
+        <p class="date-sub fade">6:00 PM · The Willow Estate</p>
+
+        <div class="countdown fade" id="countdown" aria-label="Time until the celebration" hidden>
+          <div><strong id="cd-d">0</strong><small>Days</small></div>
+          <div><strong id="cd-h">0</strong><small>Hours</small></div>
+          <div><strong id="cd-m">0</strong><small>Mins</small></div>
+          <div><strong id="cd-s">0</strong><small>Secs</small></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="block" id="details">
+    <h2>The Celebration</h2>
+    <p class="lede">An evening of dinner, music and dancing with the people we love most.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>When</h3>
+        <p>Saturday, June 12, 2027</p>
+        <small>Doors open at 5:30 PM</small>
+      </div>
+      <div class="card">
+        <h3>Where</h3>
+        <p>The Willow Estate</p>
+        <small>123 Maple Street, Springfield</small>
+      </div>
+      <div class="card">
+        <h3>Attire</h3>
+        <p>Cocktail</p>
+        <small>Garden terrace, dress for the evening</small>
+      </div>
+    </div>
+    <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=123+Maple+Street+Springfield" target="_blank" rel="noopener">View on map →</a>
+  </section>
+
+  <section class="block" id="schedule">
+    <h2>The Evening</h2>
+    <p class="lede">A relaxed program, so you can enjoy every moment.</p>
+    <ul class="schedule">
+      <li><time>5:30 PM</time><span>Arrival &amp; welcome drinks</span></li>
+      <li><time>6:30 PM</time><span>Toasts &amp; announcement</span></li>
+      <li><time>7:15 PM</time><span>Dinner</span></li>
+      <li><time>9:00 PM</time><span>Music &amp; dancing</span></li>
+      <li><time>11:00 PM</time><span>Farewell</span></li>
+    </ul>
+  </section>
+
+  <section class="block" id="rsvp">
+    <h2>Kindly Reply</h2>
+    <p class="lede">Please let us know if you can join us by <strong>May 1, 2027</strong>. Include the names of everyone in your party and any dietary needs.</p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:rsvp@example.com?subject=RSVP%20-%20Sarah%20%26%20James%20Engagement&amp;body=Name(s)%3A%0AAttending%3A%20Yes%20%2F%20No%0ANumber%20of%20guests%3A%0ADietary%20needs%3A">RSVP by Email</a>
+      <button class="btn" type="button" id="add-cal">Add to Calendar</button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="sig">Sarah &amp; James</div>
+    <div>We can't wait to celebrate with you.</div>
+  </footer>
+
+  <script>
+    // Event: June 12, 2027, 6:00 PM local time
+    var EVENT = new Date(2027, 5, 12, 18, 0, 0);
+
+    // Countdown
+    (function () {
+      var box = document.getElementById('countdown');
+      function tick() {
+        var diff = EVENT - new Date();
+        if (diff <= 0) { box.hidden = true; return false; }
+        var s = Math.floor(diff / 1000);
+        document.getElementById('cd-d').textContent = Math.floor(s / 86400);
+        document.getElementById('cd-h').textContent = Math.floor(s % 86400 / 3600);
+        document.getElementById('cd-m').textContent = Math.floor(s % 3600 / 60);
+        document.getElementById('cd-s').textContent = s % 60;
+        box.hidden = false;
+        return true;
+      }
+      if (tick()) setInterval(tick, 1000);
+    })();
+
+    // Add to calendar (.ics download)
+    document.getElementById('add-cal').addEventListener('click', function () {
+      function fmt(d) {
+        function p(n) { return String(n).padStart(2, '0'); }
+        return d.getFullYear() + p(d.getMonth() + 1) + p(d.getDate()) + 'T' + p(d.getHours()) + p(d.getMinutes()) + '00';
+      }
+      var end = new Date(EVENT.getTime() + 5 * 3600 * 1000);
+      var ics = [
+        'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Engagement Invitation//EN',
+        'BEGIN:VEVENT',
+        'UID:engagement-2027-06-12@invitation',
+        'DTSTAMP:' + fmt(new Date()),
+        'DTSTART:' + fmt(EVENT),
+        'DTEND:' + fmt(end),
+        'SUMMARY:Sarah & James — Engagement Celebration',
+        'LOCATION:The Willow Estate\\, 123 Maple Street\\, Springfield',
+        'END:VEVENT', 'END:VCALENDAR'
+      ].join('\r\n');
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
+      a.download = 'engagement-celebration.ics';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    });
+  </script>
 </body>
 </html>
